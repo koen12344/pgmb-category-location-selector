@@ -3,6 +3,7 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$USER_HOME$/Local Sites/category-location-plugin-pgmb/app/public" />
+      <path value="$USER_HOME$/Local Sites/test-category-location-selector/app/public" />
     </include_path>
   </component>
 </project>
