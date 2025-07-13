@@ -25,9 +25,12 @@ if ( class_exists( '\PGMB\Premium\Taxonomies\TaxonomyField' ) ) {
 			if ( ! class_exists( '\PGMB\Premium\Components\MultiAccountBusinessSelector' ) ) {
 				return;
 			}
+
+			require_once(__DIR__.'/NoAjaxBusinessSelector.php');
+
 			global $post_to_google_my_business;
 			$container = $post_to_google_my_business->get_container();
-			$selector = new \PGMB\Premium\Components\MultiAccountBusinessSelector($container['google_my_business_api'], $container['user_manager'], $container['gmb_cookie_api']);
+			$selector = new PGMB_NoAjaxBusinessSelector($container['google_my_business_api'], $container['service.location_sync_process'], $container['user_manager'], $container['gmb_cookie_api'], $container['repository.group_cache'], $container['repository.location_cache']);
 			$selector->set_field_name( $this->field_id );
 
 			if ( function_exists( 'mbp_fs' ) && mbp_fs()->is_plan_or_trial( 'business' ) ) {
